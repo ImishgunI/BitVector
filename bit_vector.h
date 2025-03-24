@@ -5,11 +5,11 @@
 #include <stdint.h>
 #include <stdio.h>
 
-struct Vector{
+struct Vector {
   uint32_t* array;
   size_t size;
 };
 
 struct Vector* init();
 
-#endif // !BIT_VECTOR
+#endif  // !BIT_VECTOR

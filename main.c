@@ -1,6 +1,3 @@
 #include "bit_vector.h"
 
-int main() {
-  printf("Hello World!");
-  return 0;
-}
+int main() { return 0; }
