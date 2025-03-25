@@ -12,6 +12,7 @@ struct Vector {
   size_t size;
 };
 
-struct Vector* init();
+struct Vector* init(size_t size);
 void delete_vector(struct Vector* v);
+void set_bit(struct Vector* vector, uint32_t index);
 #endif  // !BIT_VECTOR
