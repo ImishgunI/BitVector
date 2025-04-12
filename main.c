@@ -16,6 +16,16 @@ int main() {
   scanf("%u", &index);
   set_bit(v, index);
   print_vector(v);
+  index = 0;
+  printf("Enter index you want clear bit: ");
+  scanf("%u", &index);
+  clear_bit(v, index);
+  print_vector(v);
+  index = 0;
+  printf("Enter index you want to toggle: ");
+  scanf("%u", &index);
+  toggle_bit(v, index);
+  print_vector(v);
   delete_vector(v);
   return EXIT_SUCCESS;
 }
@@ -54,4 +64,20 @@ static void print_vector(struct Vector* v) {
   for (size_t i = 0; i < v->size; i++) {
     printf("%u ", v->array[i]);
   }
+  printf("\n");
+}
+
+void clear_bit(struct Vector* vector, uint32_t index) {
+  uint32_t array_index = index / 32;
+  uint32_t bit = index % 32;
+  vector->array[array_index] &= bit;
+}
+
+void toggle_bit(struct Vector *vector, uint32_t index) {
+    uint32_t array_index = index / 32;
+    if(vector->array[array_index] != 0) {
+        clear_bit(vector, index);
+    } else {
+        set_bit(vector, index);
+    }
 }
