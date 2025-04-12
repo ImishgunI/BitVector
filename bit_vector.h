@@ -18,4 +18,5 @@ void delete_vector(struct Vector* v);
 void set_bit(struct Vector* vector, uint32_t index);
 void clear_bit(struct Vector* vector, uint32_t index);
 void toggle_bit(struct Vector* vector, uint32_t index);
+uint32_t get_bit(struct Vector vector, uint32_t index);
 #endif  // !BIT_VECTOR

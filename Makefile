@@ -1,12 +1,14 @@
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra -std=c11 -g
+LIB_NAME = bit_vector.a
 
-all: clean bit_vector
+all: clean $(LIB_NAME)
 
-bit_vector: bit_vector.o
-	$(CC) $(CFLAGS) $< -o $@
+$(LIB_NAME): bit_vector.o
+	ar rcs $@ $^
+	ranlib $@
 
-bit_vector.o: main.c 
+bit_vector.o: bit_vector.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
